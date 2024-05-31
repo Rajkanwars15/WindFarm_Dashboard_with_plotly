@@ -4,10 +4,10 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 from dash.dependencies import Input, Output
-from itertools import compress
+import dash_bootstrap_components as dbc
 from charts import *
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Sample DataFrame for demonstration
 df = pd.DataFrame({
@@ -34,11 +34,71 @@ footer = html.Div([
     html.P("Copyright © 2024 Windfarm"),
 ])
 
+# Statistics row
+statistics_row = dbc.Row([
+    dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4("Total Turbines", className="card-title"),
+                html.P("110", className="card-text"),
+            ])
+        ]),
+        width=2
+    ),
+    dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4("Active", className="card-title"),
+                html.P("100", className="card-text"),
+            ])
+        ]),
+        width=2
+    ),
+    dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4("Out of Commission", className="card-title"),
+                html.P("10", className="card-text"),
+            ])
+        ]),
+        width=2
+    ),
+    dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4("Healthy", className="card-title"),
+                html.P("70", className="card-text"),
+            ])
+        ]),
+        width=2
+    ),
+    dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4("Predicted Failure", className="card-title"),
+                html.P("20", className="card-text"),
+            ])
+        ]),
+        width=2
+    ),
+    dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4("Down for Repairs", className="card-title"),
+                html.P("10", className="card-text"),
+            ])
+        ]),
+        width=2
+    ),
+], className="mb-4")
+
 # Toggle button definition
 app.layout = html.Div([
     header,  # Include the header
     dcc.Tabs([
         dcc.Tab(label='Main Page', children=[
+            html.Div(style={'margin-bottom': '20px'}),  # Add margin between tabs and statistics row
+            statistics_row,  # Include the statistics row
             html.Div([
                 dcc.Graph(id='plot1', figure=create_monthly_power_plot()),
                 dcc.Link('Go to Slide 2', href='/slide2'),
@@ -66,8 +126,9 @@ app.layout = html.Div([
         dcc.Tab(label='Slide 8', children=[html.Div([dcc.Graph(figure=create_bearing_health_plot('pred'))])])
     ]),
     footer,  # Include the footer
-], className="dark-theme")  # Applying the light theme class
+], className="dark-theme")  # Applying the dark theme class
 
+# Define all your plot creation functions
 
 # Run the app
 if __name__ == '__main__':
