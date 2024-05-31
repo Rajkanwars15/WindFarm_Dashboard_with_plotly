@@ -1,0 +1,24 @@
+{
+    "x": [
+        0.8,
+        2.3,
+        2.4,
+        4.8
+    ],
+    "y": [
+        "V47-0.66",
+        "GE1.5-82.5",
+        "Z50",
+        "V117-4.3"
+    ],
+    "x_series": [
+        "x"
+    ],
+    "y_series": [
+        "y"
+    ],
+    "labels": {
+        "x": "Mean Time Until Failure (years)",
+        "y": "Turbine Model"
+    }
+}

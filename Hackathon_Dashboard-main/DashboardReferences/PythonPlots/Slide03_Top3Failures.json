@@ -1,0 +1,37 @@
+{
+    "x": [
+        1
+    ],
+    "y": [
+        0.02,
+        0.18,
+        0.21,
+        0.59
+    ],
+    "x_series": [
+        "x"
+    ],
+    "y_series": [
+        "y"
+    ],
+    "labels": {
+        "x": "",
+        "y": "Percentage"
+    },
+    "categories": [
+        "Misc.",
+        "Gearbox",
+        "Bearing",
+        "Blade"
+    ],
+    "colors": [
+        "#636EFA",
+        "#EF553B",
+        "#00CC96",
+        "#AB63FA"
+    ],
+    "barmode": "stack",
+    "title": "Top 3 Root Causes of Failure",
+    "yaxis_tickformat": ".1%",
+    "showlegend": true
+}

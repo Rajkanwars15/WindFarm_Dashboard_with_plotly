@@ -1,0 +1,116 @@
+{
+    "x_series": "Category",
+    "y_series": "Value",
+    "labels": {
+        "x": "Failure Category",
+        "y": "Percent Failure by Model",
+        "title": "Failures by Model",
+        "legend_title": "Model"
+    },
+    "data": [
+        {
+            "model": "V47-0.66",
+            "category_data": [
+                {
+                    "category": "Blade",
+                    "value": 0.013014639990116473,
+                    "color": "blue"
+                },
+                {
+                    "category": "Bearing",
+                    "value": 0.012426163412875408,
+                    "color": "blue"
+                },
+                {
+                    "category": "Gearbox",
+                    "value": 0.016200876609468562,
+                    "color": "blue"
+                },
+                {
+                    "category": "Misc.",
+                    "value": 0.03292954397095326,
+                    "color": "blue"
+                }
+            ]
+        },
+        {
+            "model": "GE1.5-82.5",
+            "category_data": [
+                {
+                    "category": "Blade",
+                    "value": 0.049482056618158445,
+                    "color": "orange"
+                },
+                {
+                    "category": "Bearing",
+                    "value": 0.018379624718723016,
+                    "color": "orange"
+                },
+                {
+                    "category": "Gearbox",
+                    "value": 0.019131770220639444,
+                    "color": "orange"
+                },
+                {
+                    "category": "Misc.",
+                    "value": 0.040733563522066855,
+                    "color": "orange"
+                }
+            ]
+        },
+        {
+            "model": "Z50",
+            "category_data": [
+                {
+                    "category": "Blade",
+                    "value": 0.009273486409061461,
+                    "color": "green"
+                },
+                {
+                    "category": "Bearing",
+                    "value": 0.00881642267884088,
+                    "color": "green"
+                },
+                {
+                    "category": "Gearbox",
+                    "value": 0.006314347796984987,
+                    "color": "green"
+                },
+                {
+                    "category": "Misc.",
+                    "value": 0.03759763021786327,
+                    "color": "green"
+                }
+            ]
+        },
+        {
+            "model": "V117-4.3",
+            "category_data": [
+                {
+                    "category": "Blade",
+                    "value": 0.01838881109791984,
+                    "color": "red"
+                },
+                {
+                    "category": "Bearing",
+                    "value": 0.006773442796218704,
+                    "color": "red"
+                },
+                {
+                    "category": "Gearbox",
+                    "value": 0.01050877919809582,
+                    "color": "red"
+                },
+                {
+                    "category": "Misc.",
+                    "value": 0.0376646409043424,
+                    "color": "red"
+                }
+            ]
+        }
+    ],
+    "layout": {
+        "barmode": "group",
+        "xaxis_tickformat": ".0%"
+    }
+}

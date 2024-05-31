@@ -1,0 +1,47 @@
+{
+    "lat": [
+        33.9118,
+        33.910629,
+        33.911156
+    ],
+    "long": [
+        -116.732643,
+        -116.736069,
+        -116.736076
+    ],
+    "x_series": "long",
+    "y_series": "lat",
+    "labels": {
+        "x": "Longitude",
+        "y": "Latitude",
+        "title": "Turbine Health Map",
+        "xaxis_range": [
+            -116.73958959999999,
+            -116.6989864
+        ],
+        "yaxis_range": [
+            33.9029617,
+            33.9187093
+        ]
+    },
+    "map_features": {
+        "land_color": "rgb(217, 217, 217)",
+        "lake_color": "rgb(255, 255, 255)",
+        "resolution": 50,
+        "projection_type": "mercator"
+    },
+    "points": {
+        "colors": [
+            "#ff8080",
+            "#ff8080",
+            "#ff8080"
+        ],
+        "size": 7,
+        "outline_color": [
+            "#990000",
+            "#990000",
+            "#990000"
+        ],
+        "outline_width": 1
+    }
+}

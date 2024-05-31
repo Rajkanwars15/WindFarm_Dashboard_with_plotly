@@ -1,0 +1,43 @@
+{
+    "x": [
+        0.37851162325372983,
+        -0.7369655941662062,
+        -0.3219280948873623
+    ],
+    "y": [
+        "Profit/loss",
+        "Unexpected failures",
+        "Up time"
+    ],
+    "x_series": [
+        "x"
+    ],
+    "y_series": [
+        "y"
+    ],
+    "labels": {
+        "x": "Change Scale (Log Scale)",
+        "y": "Categories"
+    },
+    "series_colors": [
+        "green",
+        "green",
+        "red"
+    ],
+    "xaxis": {
+        "tickvals": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "ticktext": [
+            "Half",
+            "No Change",
+            "Double"
+        ],
+        "range": [
+            -1.0,
+            1.0
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+/* neuralix-light.css */
+
+body {
+    background-color: #DCE3E3;
+    color: #181A1B;
+}
+
+.card {
+    background-color: #ffffff;
+}
+
+.page {
+    background-color: #DCE3E3;
+}
+
+.header {
+    background-color: #ffffff;
+    color: #181A1B;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: #181A1B;
+}
+
+.toggle-theme {
+    background-color: #5ab5ad;
+    color: #ffffff;
+}
+
