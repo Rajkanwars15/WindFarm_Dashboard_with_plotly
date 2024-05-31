@@ -62,5 +62,14 @@ h1, h3 {
 
 
 .card-body {
-    height: 100px; /* Adjust the height as needed */
+    height: 100px;
+    border-radius: 10px;
+}
+
+.rounded-graph {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.graph-spacing {
+    margin-bottom: 20px;
 }

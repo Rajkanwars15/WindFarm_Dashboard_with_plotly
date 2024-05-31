@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from charts import *
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'style.css'])
 
 # Sample DataFrame for demonstration
 df = pd.DataFrame({
@@ -36,88 +36,42 @@ footer = html.Div([
 
 # Statistics row
 statistics_row = dbc.Row([
-    dbc.Col(
-        dbc.Card([
-            dbc.CardBody([
-                html.H4("Total Turbines", className="card-title"),
-                html.P("110", className="card-text"),
-            ])
-        ]),
-        width=2
-    ),
-    dbc.Col(
-        dbc.Card([
-            dbc.CardBody([
-                html.H4("Active", className="card-title"),
-                html.P("100", className="card-text"),
-            ])
-        ]),
-        width=2
-    ),
-    dbc.Col(
-        dbc.Card([
-            dbc.CardBody([
-                html.H4("Out of Commission", className="card-title"),
-                html.P("10", className="card-text"),
-            ])
-        ]),
-        width=2
-    ),
-    dbc.Col(
-        dbc.Card([
-            dbc.CardBody([
-                html.H4("Healthy", className="card-title"),
-                html.P("70", className="card-text"),
-            ])
-        ]),
-        width=2
-    ),
-    dbc.Col(
-        dbc.Card([
-            dbc.CardBody([
-                html.H4("Predicted Failure", className="card-title"),
-                html.P("20", className="card-text"),
-            ])
-        ]),
-        width=2
-    ),
-    dbc.Col(
-        dbc.Card([
-            dbc.CardBody([
-                html.H4("Down for Repairs", className="card-title"),
-                html.P("10", className="card-text"),
-            ])
-        ]),
-        width=2
-    ),
 ], className="mb-4")
 
 # Toggle button definition
 app.layout = html.Div([
     header,  # Include the header
     dcc.Tabs([
-        dcc.Tab(label='Main Page', children=[
+        dcc.Tab(label='Home', children=[
             html.Div(style={'margin-bottom': '20px'}),  # Add margin between tabs and statistics row
             statistics_row,  # Include the statistics row
             html.Div([
-                dcc.Graph(id='plot1', figure=create_monthly_power_plot()),
-                dcc.Link('Go to Slide 2', href='/slide2'),
-                dcc.Graph(id='plot2', figure=create_noise_difference_plot()),
-                dcc.Link('Go to Slide 3', href='/slide3'),
-                dcc.Graph(id='plot3', figure=create_gps_plot()),
-                dcc.Link('Go to Slide 4', href='/slide4'),
-                dcc.Graph(id='plot4', figure=create_quarterly_summary_plot()),
-                dcc.Link('Go to Slide 5', href='/slide5'),
-                dcc.Graph(id='plot5', figure=create_failure_model_plot()),
-                dcc.Link('Go to Slide 6', href='/slide6'),
-                dcc.Graph(id='plot6', figure=create_time_series_plot(df_cumsum, threshold, next_hundred)),
-                dcc.Link('Go to Slide 7', href='/slide7'),
-                dcc.Graph(id='plot7', figure=create_stacked_bar_plot(df)),
-                dcc.Link('Go to Slide 8', href='/slide8'),
-                dcc.Graph(id='plot8', figure=create_bearing_health_plot('pred')),
+                dcc.Graph(id='plot1', figure=create_monthly_power_plot(), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide2'),
+                dcc.Graph(id='plot2', figure=create_noise_difference_plot(), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide3'),
+                dcc.Graph(id='plot3', figure=create_gps_plot(), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide4'),
+                dcc.Graph(id='plot4', figure=create_quarterly_summary_plot(), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide5'),
+                dcc.Graph(id='plot5', figure=create_failure_model_plot(), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide6'),
+                dcc.Graph(id='plot6', figure=create_time_series_plot(df_cumsum, threshold, next_hundred), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide7'),
+                dcc.Graph(id='plot7', figure=create_stacked_bar_plot(df), className='rounded-graph graph-spacing'),
+                dcc.Link('', href='/slide8'),
+                dcc.Graph(id='plot8', figure=create_bearing_health_plot('pred'), className='rounded-graph graph-spacing'),
             ]),
         ]),
-        dcc.Tab(label='Slide 2', children=[html.Div([dcc.Graph(figure=create_monthly_power_plot())])]),
+        dcc.Tab(label='Slide 2', children=[
+            html.Div([
+                dcc.Graph(figure=create_noise_difference_plot(), className='rounded-graph'),
+                dbc.Row([
+                    dbc.Col(dcc.Graph(figure=create_quarterly_summary_plot(), className='rounded-graph'), width=6),
+                    dbc.Col(dcc.Graph(figure=create_gps_plot(), className='rounded-graph'), width=6)
+                ])
+            ])
+        ]),
         dcc.Tab(label='Slide 3', children=[html.Div([dcc.Graph(figure=create_noise_difference_plot())])]),
         dcc.Tab(label='Slide 4', children=[html.Div([dcc.Graph(figure=create_quarterly_summary_plot())])]),
         dcc.Tab(label='Slide 5', children=[html.Div([dcc.Graph(figure=create_failure_model_plot())])]),
@@ -126,9 +80,7 @@ app.layout = html.Div([
         dcc.Tab(label='Slide 8', children=[html.Div([dcc.Graph(figure=create_bearing_health_plot('pred'))])])
     ]),
     footer,  # Include the footer
-], className="dark-theme")  # Applying the dark theme class
-
-# Define all your plot creation functions
+], className="light-theme")
 
 # Run the app
 if __name__ == '__main__':
